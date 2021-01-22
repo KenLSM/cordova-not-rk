@@ -1,16 +1,14 @@
 <script>
-  export let name;
+  // import navaid from "navaid";
+
+  import { Route } from "./router";
 </script>
 
 <main>
-  <h1>Hello {name}!</h1>
-  <div class="app">
-    <h1>Apache Cordova ❤️ Svelte</h1>
-    <div id="deviceready" class="blink">
-      <p class="event listening">Connecting to Device</p>
-      <p class="event received">Device is Ready</p>
-    </div>
-  </div>
+  <svelte:component
+    this={$Route[$Route.length - 1]["r"]}
+    u={$Route[$Route.length - 1]["u"]}
+  />
 </main>
 
 <style>
@@ -19,18 +17,5 @@
     padding: 1em;
     max-width: 240px;
     margin: 0 auto;
-  }
-
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
-  }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
   }
 </style>
